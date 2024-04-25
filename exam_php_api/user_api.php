@@ -50,7 +50,6 @@ function updateUser($id, $username, $password) {
 
 function deleteUser($id) {
     global $conn;
-    // Check foreign key constraints before delete
     $sql_check_fk = "SELECT COUNT(*) as count FROM bookings WHERE user_id=?";
     $stmt_check_fk = $conn->prepare($sql_check_fk);
     $stmt_check_fk->bind_param("i", $id);
@@ -58,10 +57,9 @@ function deleteUser($id) {
     $result_check_fk = $stmt_check_fk->get_result();
     $row = $result_check_fk->fetch_assoc();
     if ($row['count'] > 0) {
-        return false; // Foreign key constraint violation
+        return false;
     }
 
-    // If no constraint violation, proceed with delete
     $sql = "DELETE FROM users WHERE id=?";
     $stmt = $conn->prepare($sql);
     $stmt->bind_param("i", $id);
