@@ -1,0 +1,41 @@
+1. **Users API:**
+   - Fetch all users: `GET` request to `http://localhost/exam_php_api/fetch_all_users.php`
+   - Fetch user by ID: `GET` request to `http://localhost/exam_php_api/fetch_user_by_id.php?id={user_id}`
+   - Insert user: `POST` request to `http://localhost/exam_php_api/insert_user.php` with body parameters `username`, `email`, `password`
+   //----- Update user: `PUT` request to `http://localhost/exam_php_api/update_user.php?id={user_id}` with body parameters `username`, `password`
+   - Delete user: `DELETE` request to `http://localhost/exam_php_api/delete_user.php?id={user_id}`
+
+2. **Movies API:**
+   - Fetch all movies: `GET` request to `http://localhost/exam_php_api/fetch_all_movies.php`
+   - Fetch movie by ID: `GET` request to `http://localhost/exam_php_api/fetch_movie_by_id.php?id={movie_id}`
+   - Insert movie: `POST` request to `http://localhost/exam_php_api/insert_movie.php` with body parameter `title`
+   //----- Update movie: `PUT` request to `http://localhost/exam_php_api/update_movie.php?id={movie_id}` with body parameter `title`
+   - Delete movie: `DELETE` request to `http://localhost/exam_php_api/delete_movie.php?id={movie_id}`
+
+3. **Screens API:**
+   - Fetch all screens: `GET` request to `http://localhost/exam_php_api/fetch_all_screens.php`
+   - Fetch screen by ID: `GET` request to `http://localhost/exam_php_api/fetch_screen_by_id.php?id={screen_id}`
+   - Insert screen: `POST` request to `http://localhost/exam_php_api/insert_screen.php` with body parameter `name`
+   //------ Update screen: `PUT` request to `http://localhost/exam_php_api/update_screen.php?id={screen_id}` with body parameter `name`
+   - Delete screen: `DELETE` request to `http://localhost/exam_php_api/delete_screen.php?id={screen_id}`
+
+4. **Showtimes API:**
+   - Fetch all showtimes: `GET` request to `http://localhost/exam_php_api/fetch_all_showtimes.php`
+   - Fetch showtime by ID: `GET` request to `http://localhost/exam_php_api/fetch_showtime_by_id.php?id={showtime_id}`
+   - Insert showtime: `POST` request to `http://localhost/exam_php_api/insert_showtime.php` with body parameters `movie_id`, `screen_id`, `time`
+   //------- Update showtime: `PUT` request to `http://localhost/exam_php_api/update_showtime.php?id={showtime_id}` with body parameters `movie_id`, `screen_id`, `time`
+   - Delete showtime: `DELETE` request to `http://localhost/exam_php_api/delete_showtime.php?id={showtime_id}`
+
+5. **Bookings API:**
+   - Fetch all bookings: `GET` request to `http://localhost/exam_php_api/fetch_all_bookings.php`
+   - Fetch booking by ID: `GET` request to `http://localhost/exam_php_api/fetch_booking_by_id.php?id={booking_id}`
+   - Insert booking: `POST` request to `http://localhost/exam_php_api/insert_booking.php` with body parameters `user_id`, `showtime_id`, `seats_booked`
+   //------ Update booking: `PUT` request to `http://localhost/exam_php_api/update_booking.php?id={booking_id}` with body parameters `user_id`, `showtime_id`, `seats_booked`
+   - Delete booking: `DELETE` request to `http://localhost/exam_php_api/delete_booking.php?id={booking_id}`
+
+6. **Seats API:**
+   - Fetch all seats: `GET` request to `http://localhost/exam_php_api/fetch_all_seats.php`
+   - Fetch seat by ID: `GET` request to `http://localhost/exam_php_api/fetch_seat_by_id.php?id={seat_id}`
+   - Insert seat: `POST` request to `http://localhost/exam_php_api/insert_seat.php` with body parameters `screen_id`, `seat_number`
+   //----- Update seat: `PUT` request to `http://localhost/exam_php_api/update_seat.php?id={seat_id}` with body parameters `screen_id`, `seat_number`
+   - Delete seat: `DELETE` request to `http://localhost/exam_php_api/delete_seat.php?id={seat_id}`
