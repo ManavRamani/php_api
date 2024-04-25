@@ -48,7 +48,6 @@ function updateMovie($id, $title, $description, $release_date, $duration) {
 
 function deleteMovie($id) {
     global $conn;
-    // Check foreign key constraints before delete
     $sql_check_fk = "SELECT COUNT(*) as count FROM showtimes WHERE movie_id=?";
     $stmt_check_fk = $conn->prepare($sql_check_fk);
     $stmt_check_fk->bind_param("i", $id);
@@ -56,10 +55,9 @@ function deleteMovie($id) {
     $result_check_fk = $stmt_check_fk->get_result();
     $row = $result_check_fk->fetch_assoc();
     if ($row['count'] > 0) {
-        return false; // Foreign key constraint violation
+        return false; 
     }
 
-    // If no constraint violation, proceed with delete
     $sql = "DELETE FROM movies WHERE id=?";
     $stmt = $conn->prepare($sql);
     $stmt->bind_param("i", $id);
