@@ -56,10 +56,9 @@ function deleteScreen($id) {
     $result_check_fk = $stmt_check_fk->get_result();
     $row = $result_check_fk->fetch_assoc();
     if ($row['count'] > 0) {
-        return false; // Foreign key constraint violation
+        return false;
     }
 
-    // If no constraint violation, proceed with delete
     $sql = "DELETE FROM screens WHERE id=?";
     $stmt = $conn->prepare($sql);
     $stmt->bind_param("i", $id);
